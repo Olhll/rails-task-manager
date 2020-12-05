@@ -1,0 +1,9 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<button type="button" class="btn btn-danger">
+  <%= link_to edit_path(@task) do %>
+    <i class="far fa-edit"></i>
+  <% end %>
+</button>
+

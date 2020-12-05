@@ -1,0 +1,35 @@
+<p>Here are the tasks I have to go for :</p>
+
+<table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Details</th>
+      <th scope="col">Done ?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to "#{task.title}", task_path(task) %></td>
+        <td><em><%= "#{task.details}" %></em></td>
+        <td><% if task.completed  %>
+          <i class="fas fa-hand-peace"></i>
+          <% else %>
+          <i class="fas fa-thumbs-down"></i>
+
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-success"><%= link_to tasks_new_path do %>
+                                                  <i class="fas fa-plus"></i>
+                                                    <% end %>
+                                                  </button>
+
+
+
+
